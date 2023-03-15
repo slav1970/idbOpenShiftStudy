@@ -2,12 +2,12 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
 # set your user name
-  name:  slav1970-hello-world
+  name:  user5-hello-world
 spec:
   to:
     kind: Service
 # set your user name
-    name:  slav1970-hello-world
+    name:  user5-hello-world
     weight: 100
   port:
     targetPort: 8080
