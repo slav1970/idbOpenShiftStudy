@@ -2,18 +2,18 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
 # set your user name
-  name: <userName>-hello-world
+  name: slav1970-hello-world
 spec:
   replicas: 3
   selector:
     matchLabels:
 # set your user name
-      app: <userName>-hello-world
+      app: slav1970-hello-world
   template:
     metadata:
       labels:
 # set your user name
-        app: <userName>-hello-world
+        app: slav1970-hello-world
     spec:
       containers:
         - resources: {}
@@ -24,7 +24,7 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # update with the iamge you build in part 1
-          image: 'quay.io/<userName>/<imageName>:<Tag>'
+          image: 'quay.io/slav1970/idbhelloworld:v1'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
