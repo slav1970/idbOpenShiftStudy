@@ -13,7 +13,7 @@ spec:
         app: {{ .Release.Name }}
     spec:
       volumes:
-        - name: index-html
+        - name: index.html
           configMap:
             name: index.html
             defaultMode: 420
