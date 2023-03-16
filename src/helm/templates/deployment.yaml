@@ -30,7 +30,7 @@ spec:
           volumeMounts:
             - name: index-html
               mountPath: /tmp/html         
-        restartPolicy: Always
+      restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
     type: RollingUpdate
