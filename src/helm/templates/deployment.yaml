@@ -11,7 +11,7 @@ spec:
     metadata:
       annotations:
         rollme: {{ randAlphaNum 5 | quote }}
-        checksum/config: {{ include (print $.Template.BasePath "/helm/templates/configmap.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "./configmap.yaml") . | sha256sum }}
       labels:
         app: {{ .Release.Name }}
     spec:
