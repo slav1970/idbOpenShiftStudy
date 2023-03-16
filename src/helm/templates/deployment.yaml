@@ -17,7 +17,6 @@ spec:
           configMap:
             name: index.html
             defaultMode: 420
-    spec:
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
