@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: index.html
+  name: index.htm
 immutable: false
 data:
 {{ (.Files.Glob "html/*").AsConfig | indent 2 }}
