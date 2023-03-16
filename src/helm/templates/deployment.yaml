@@ -50,9 +50,6 @@ spec:
           volumeMounts:
             - name: index-html
               mountPath: /tmp/html         
-          env:
-            - name: PORT
-              value: {{ .Values.containers.containerPort | quote }}
         restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
