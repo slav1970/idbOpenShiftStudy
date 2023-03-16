@@ -1,19 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ .Release.Name }}-2
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ .Release.Name }}-2
   template:
     metadata:
       annotations:
+        argocd.argoproj.io/sync-wave: "10"
         checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
         rollme: {{ randAlphaNum 5 | quote }}
       labels:
-        app: {{ .Release.Name }}
+        app: {{ .Release.Name }}-2
     spec:
       volumes:
         - name: index-html
@@ -43,7 +44,7 @@ spec:
             successThreshold: 1
             failureThreshold: 3
           terminationMessagePath: /dev/termination-log
-          name: {{ .Release.Name }}
+          name: {{ .Release.Name }}-2
           ports:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
